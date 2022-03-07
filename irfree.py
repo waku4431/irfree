@@ -5,7 +5,7 @@ from galvani import BioLogic as BL
 
 #file=input('ファイル名')
 
-mpr=BL.MPRfile('my.mpr')
+mpr=BL.MPRfile('none.mpr')
 
 df=pd.DataFrame(mpr.data)
 print(df)
@@ -22,10 +22,10 @@ df.to_csv('myfile3.csv')
 #計算したdfを新しいファイルに書き出す
 
 #plt.scatter(df["I/mA"],df["irfree"],label="junkan") 
-plt.scatter(df["time/s"],df["I/mA"],label="constant voltage 2.5V")#第一引数に横軸の配列，第二引数に縦軸の配列
+plt.scatter(df["I/mA"],df["Ewe/V"],label="none")#第一引数に横軸の配列，第二引数に縦軸の配列
 
-plt.xlabel('time/s',fontsize=30)
-plt.ylabel('I/mA',fontsize=30)
+plt.xlabel('I/mA',fontsize=30)
+plt.ylabel('Ewe/V',fontsize=30)
 
 #plt.xlabel('current[mA]',fontsize=30) #横軸ラベル名
 #plt.ylabel('voltage[V]',fontsize=30) #縦軸ラベル名
@@ -33,5 +33,5 @@ plt.tick_params(labelsize=30)#軸の目盛りのフォントサイズ
 plt.legend()
 plt.legend(loc="lower right",borderaxespad=0,fontsize=50,markerscale=6)
 plt.grid()
-plt.ylim(1100,1400)#y軸の範囲
+# plt.ylim(1100,1400)#y軸の範囲
 plt.show()
